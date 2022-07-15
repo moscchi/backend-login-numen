@@ -5,7 +5,7 @@ require('dotenv').config();
 const db = require('./configuration/database/db')
 
 const app = express();
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT;
 app.use(express.json());
 app.use(cors())
 app.use('/api', router)
