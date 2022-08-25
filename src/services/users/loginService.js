@@ -10,13 +10,14 @@ const loginService = async (req, next) => {
   const user = await User.findOne({ username });
   const passwordOk =
     user === null ? false : await bcrypt.compare(password, user.password);
-  const userForToken = {
-    username: user.username,
+  const payload = {
+    username: user.username
   };
-  const token = jwt.sign(userForToken, secret);
+  const token = jwt.sign(payload, secret);
   if (passwordOk) {
     return { username: user.username, token };
   }
 };
+
 
 module.exports = loginService;

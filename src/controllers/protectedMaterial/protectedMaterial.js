@@ -1,5 +1,5 @@
 const protectedMaterialController = (_, res) => {
-    res.json({message: 'Ya puedes ver la información!!'})
+    res.json({message: 'Estas terminando el tutorial de login fullstack!!'})
 }
 
 module.exports = protectedMaterialController;
